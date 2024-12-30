@@ -1,0 +1,132 @@
+$ php artisan make:model Routelist -mcr
+modify migration file
+$ php artisan migrate
+
+
+//input fillable field list to the model > Routelist as follows
+protected $fillable = [
+    'id', 'route_name', 'route_url', 'route_hash', 'route_description', 'route_note', 'route_grouping', 'to_role', 'is_active'
+];
+
+
+Create Interface & Eloquent File and rename them
+
+$ php artisan sam:eloquent Foldername/Filename and then rename
+$ php artisan sam:interface Foldername/Filename and then rename
+
+add singleton entry to RespositoryServiceProvider.php under app\Providers
+
+ALTER TABLE `tasks` ADD `task_for` INT(11) NULL AFTER `task_assigned_to_head`;
+
+
+<div class="columns add_more"
+                         v-for="(more, index) in breakdown"
+                         v-bind:key="index">
+                        <div class="column is-4">
+                            <input class="input is-small" type="text" placeholder="Enter where to where"
+                                   v-model.lazy="more.ta_fromto" required>
+                        </div>
+                        <div class="column is-2">
+                            <div class="control">
+                                <div class="select is-small">
+                                    <?php
+                                    $transports = [
+                                        'Bus', 'Rickshaw', 'CNG', 'Taxi', 'Auto', 'Tempo', 'Van', 'Train', 'Boat', 'Other'
+                                    ];
+                                    ?>
+                                    {{ Form::select('ta_transport', $transports ?? NULL, NULL, ['required', 'class' => '', 'v-model.lazy' => "more.ta_transport"]) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <input class="input is-small" type="number" placeholder="Enter amount"
+                                   v-model.lazy="more.ta_amount"
+                                   v-on:input="getTaAllowances(breakdown)" required>
+
+                        </div>
+                        <div class="column">
+                            <input class="input is-small" type="text" placeholder="Enter note"
+                                   v-model.lazy="more.ta_note"
+                                   required>
+                        </div>
+                        <div class="column is-2">
+                            <button @click="addBreakdown" class="button is-small is-primary">+</button>
+                            <button @click="deleteBreakdown(index)" class="button is-small is-danger">x</button>
+                        </div>
+                    </div>
+
+
+
+@if(auth()->user()->isAdmin(auth()->user()->id))
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="{{ route('employeerequisitions.index') }}"
+                                   class="button is-primary is-large is-accent">
+                                    <span><i class="fas fa-user"></i></span>
+                                </a>
+                                <div class="o_caption">User</div>
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="{{ route('projects.index') }}"
+                                   class="button is-danger is-large is-accent">
+                                    <span><i class="fas fa-project-diagram"></i></span>
+                                </a>
+                                <div class="o_caption">Projects</div>
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="{{ route('projects.index') }}"
+                                   class="button is-success is-large is-accent">
+                                    <span><i class="far fa-hand-paper"></i></span>
+                                </a>
+                                <div class="o_caption">Requisitions</div>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if(auth()->user()->isResource(auth()->user()->id))
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="{{ route('employeerequisitions.requested_by') }}"
+                                   class="button is-success is-large is-accent">
+                                    <span><i class="far fa-hand-paper"></i></span>
+                                </a>
+                                <div class="o_caption">My Requisitions</div>
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="#"
+                                   {{--                                   {{ route('bills.bills_by') }}--}}
+                                   class="button is-danger is-large is-accent">
+                                    <span><i class="fas fa-file"></i></span>
+                                </a>
+                                <div class="o_caption">My Bills</div>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if(auth()->user()->isManager(auth()->user()->id))
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="{{ route('employeerequisitions.rformanager') }}"
+                                   class="button is-success is-large is-accent">
+                                    <span><i class="far fa-hand-paper"></i></span>
+                                </a>
+                                <div class="o_caption">Requisitions to me</div>
+                            </div>
+                        </div>
+                        <div class="column is-2">
+                            <div class="isCentered">
+                                <a href="#"
+                                   {{--                                   {{ route('bills.bills_by') }}--}}
+                                   class="button is-danger is-large is-accent">
+                                    <span><i class="fas fa-project-diagram"></i></span>
+                                </a>
+                                <div class="o_caption">Bills to me</div>
+                            </div>
+                        </div>
+                    @endif

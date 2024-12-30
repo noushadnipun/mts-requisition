@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /wp-content/uploads/
+
+Sitemap: https://www.mtsbd.net/sitemap.xml

@@ -1,0 +1,95 @@
+$ php artisan make:migration create_terms_table
+$ php artisan migrate
+
+$ php artisan sam:eloquent Term/Term (then change name to EloquentTerm)
+$ php artisan sam:repository Term/Term (then change name to TermInterface)
+$ php artisan make:model Subcontractor
+
+$ php artisan make:controller Site/SubcontractorController
+
+(then copy fillable columns)
+
+finally add singleton value to app\providers\appserviceprovider as follows
+$this->app->singleton(TermInterface::class, EloquentTerm::class);
+
+
+// terms/category management routes
+Route::get('terms', ['as' => 'terms', 'uses' => '\App\Http\Controllers\Admin\TermController@terms'])->name('terms');
+Route::post('term_save', ['as' => 'term_save', 'uses' => '\App\Http\Controllers\Admin\TermController@store'])->name('term_save');
+Route::get('edit_term/{id}', ['as' => 'edit_term', 'uses' => '\App\Http\Controllers\Admin\TermController@edit_term'])->name('edit_term');
+Route::post('term/{id}/update', ['as' => 'term/{id}/update', 'uses' => '\App\Http\Controllers\Admin\TermController@term_update_save'])->name('term_update_save');
+Route::delete('term_delete/{id}', ['as' => 'delete_term', 'uses' => '\App\Http\Controllers\Admin\TermController@destroy']);
+// terms/category management routes close
+
+
+
+Create a seed file
+php artisan make:seeder PostsTableSeeder
+
+Seeding by a specific seeder
+php artisan db:seed --class=PostsTableSeeder
+
+
+
+// row exists checking
+if (App\Product::where('id', '=', $key)->exists())
+
+// make factory
+$ php artisan make:factory UserFactory --model=User
+
+// how to tink
+$ php artisan tinker
+>>> factory('App\User', 10)->create();
+
+
+// specific migrations
+https://stackoverflow.com/questions/45473624/laravel-5-4-specific-table-migration
+
+
+// duplicate entry checking and return to previous page
+$errorCode = $ex->errorInfo[1];
+if ($errorCode === 1062) {
+    return back()->with('failed', $ex->errorInfo[2]);
+} else {
+    return redirect('/checkout/delivery_address')->withErrors($ex->getMessage());
+}
+
+
+// copy one column to another column on same table
+UPDATE `terms` SET seo_url=name;
+
+MySQL replace all whitespaces with -
+SELECT REPLACE( table.field, ' ', '-' ) FROM table;
+
+
+
+// cPanel Access
+
+https://ultimatecleaners.com.au:2083/
+user: ultimatecleaners
+pass: o{Kdh)W71@o8
+
+#WHM
+Link: https://vps721663.ovh.net:2087
+User: root
+Password: FYn1Jxpl
+
+
+#Cpanel
+Link: http://ozcleaners.com.au/cpanel
+User: ozcleaners
+Password: ozc@2020
+cPanel Redirect
+ozcleaners.com.au
+
+
+
+
+User: ozcleane_cuc
+Database: ozcleane_cuc
+Password: C=@nmdH)~k{n
+
+
+
+
+

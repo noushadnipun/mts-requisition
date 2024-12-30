@@ -1,0 +1,170 @@
+
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important
+}
+
+
+.select2-container--default .select2-selection--single,
+.select2-selection .select2-selection--single {
+    border: 1px solid #d2d6de;
+    border-radius: 0;
+    padding: 6px 12px;
+    height: 34px
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px
+}
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    user-select: none;
+    -webkit-user-select: none
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-right: 10px
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+    padding-right: 0;
+    height: auto;
+    margin-top: -3px
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #525252;
+    line-height: 22px;
+    font-size: 13px;
+}
+
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    border: 1px solid #dbdbdb;
+    border-radius: 0 !important;
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 18px;
+    position: absolute;
+    top: 6px !important;
+    right: 1px;
+    width: 20px
+}
+.field {
+    width: 100%;
+}
+.select2-container {
+    width: 100% !important;
+    padding: 0;
+}
+
+textarea, input {
+    font-size: 12px !important;
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    color: #525252;
+    border: 1px solid #dbdbdb;
+    border-radius: 0 !important;
+}
+
+input:focus, textarea:focus, select:focus{
+    border-color: #66afe9 !important;
+    outline: 0 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%) !important;
+    box-shadow: inset 0 0px 0px rgb(0 0 0 / 0%), 0 0 0px rgb(102 175 233 / 0%) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #bdbdbd transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 3px 0 3px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #bdbdbd transparent;
+    border-style: solid;
+    border-width: 0 3px 5px 3px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+    font-size: 10px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #ffffff;
+    color: #6193ab;
+    border: 1px solid #e6e6e6;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.control button.button {
+    margin-top: 10px;
+}
+
+/* Table */
+
+table.bw_table {
+    width: 100%;
+    margin: 0px;
+}
+
+table.bw_table tr th {
+    background: #2d3748;
+    color: #FFFFFF !important;
+    padding: 5px;
+}
+
+table.bw_table tr td {
+    border: 1px solid #d8d6d6;
+    padding: 8px;
+    margin: 10px;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border: 2px solid transparent;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: .625em;
+    margin-top: -12px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: rotate(
+        -45deg
+    );
+    transform-origin: center;
+    width: .625em;
+}
